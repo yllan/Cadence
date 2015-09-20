@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cadence" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAGNITUDE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4Y-IA-Ija">
+                                <rect key="frame" x="20" y="82" width="560" height="88"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="64"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CADENCE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcM-fS-IOr">
+                                <rect key="frame" x="20" y="261" width="560" height="74.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="64"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lna-Wm-UcC">
+                                <rect key="frame" x="235" y="191" width="130" height="46"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="5" maxX="20" maxY="5"/>
+                                <state key="normal" title="START"/>
+                                <connections>
+                                    <action selector="startMeasure:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fCA-9g-N02"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVERAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Flk-wB-Eyc">
+                                <rect key="frame" x="20" y="343" width="560" height="74.5"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="64"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Flk-wB-Eyc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="01s-Xj-b3p"/>
+                            <constraint firstItem="W4Y-IA-Ija" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="Ka3-Wh-gKc"/>
+                            <constraint firstItem="W4Y-IA-Ija" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Mgt-aN-5rC"/>
+                            <constraint firstItem="kcM-fS-IOr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YCV-V4-3VB"/>
+                            <constraint firstItem="kcM-fS-IOr" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="dkT-It-kg0"/>
+                            <constraint firstItem="lna-Wm-UcC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e14-gl-n1I"/>
+                            <constraint firstItem="lna-Wm-UcC" firstAttribute="top" secondItem="W4Y-IA-Ija" secondAttribute="bottom" constant="21" id="f2r-jF-2Xb"/>
+                            <constraint firstItem="Flk-wB-Eyc" firstAttribute="top" secondItem="kcM-fS-IOr" secondAttribute="bottom" constant="8" id="iDb-EL-2GH"/>
+                            <constraint firstItem="kcM-fS-IOr" firstAttribute="top" secondItem="lna-Wm-UcC" secondAttribute="bottom" constant="24" id="pZR-dm-hwC"/>
+                            <constraint firstItem="Flk-wB-Eyc" firstAttribute="top" secondItem="kcM-fS-IOr" secondAttribute="bottom" constant="8" id="s02-cT-Psy"/>
+                            <constraint firstItem="Flk-wB-Eyc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sod-h5-Usd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="W4Y-IA-Ija" secondAttribute="bottom" constant="430" id="w7p-O9-VZq"/>
+                            <constraint firstItem="W4Y-IA-Ija" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xOZ-Vs-paz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="averageLabel" destination="Flk-wB-Eyc" id="91t-1z-idu"/>
+                        <outlet property="cadenceLabel" destination="kcM-fS-IOr" id="N8h-gb-JcU"/>
+                        <outlet property="magnitudeLabel" destination="W4Y-IA-Ija" id="zgf-B0-BFr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="66" y="139"/>
         </scene>
     </scenes>
 </document>
