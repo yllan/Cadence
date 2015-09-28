@@ -46,8 +46,6 @@ class Cadence {
     /* measure */
     func beginMeasure() {
         clear()
-
-        beginDate = NSDate()
         previousMagnitude = 0
         previousTopDate = nil
         timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "tick", userInfo: nil, repeats: true)
@@ -61,6 +59,8 @@ class Cadence {
         history[sampleCount++ % history.count] = magnitude
         if sampleCount < history.count { // collecting enough data
             return
+        } else if sampleCount == history.count {
+            beginDate = NSDate()
         }
 
         minMagnitude = history.prefix(sampleCount).minElement()!
