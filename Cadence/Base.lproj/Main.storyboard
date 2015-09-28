@@ -216,6 +216,19 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outletCollection property="rpmDigits" destination="Hga-mM-iED" collectionClass="NSMutableArray" id="IlY-JR-hfY"/>
+                        <outletCollection property="rpmDigits" destination="zRC-7e-4Ip" collectionClass="NSMutableArray" id="Qbf-p1-X0I"/>
+                        <outletCollection property="rpmDigits" destination="rrs-ol-hIY" collectionClass="NSMutableArray" id="oRu-oA-f2z"/>
+                        <outletCollection property="rpmDigits" destination="Pge-Bk-BDZ" collectionClass="NSMutableArray" id="iuB-hy-b86"/>
+                        <outletCollection property="countDigits" destination="dZ5-co-Qc0" collectionClass="NSMutableArray" id="SJT-JQ-ne6"/>
+                        <outletCollection property="countDigits" destination="eoh-Rw-5d9" collectionClass="NSMutableArray" id="G5h-kZ-VAV"/>
+                        <outletCollection property="countDigits" destination="LKe-bt-QfZ" collectionClass="NSMutableArray" id="pF1-BQ-2R3"/>
+                        <outletCollection property="countDigits" destination="1EQ-lv-SHx" collectionClass="NSMutableArray" id="CrN-ZP-FXc"/>
+                        <outletCollection property="averageDigits" destination="WsD-Dp-vGe" collectionClass="NSMutableArray" id="y8J-dM-DLS"/>
+                        <outletCollection property="averageDigits" destination="5ZV-a0-I9z" collectionClass="NSMutableArray" id="5bK-6j-1hK"/>
+                        <outletCollection property="averageDigits" destination="phN-ct-97Q" collectionClass="NSMutableArray" id="AUn-Pf-d3R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,11 +241,11 @@
         <image name="2" width="251" height="337"/>
         <image name="3" width="251" height="337"/>
         <image name="4" width="251" height="337"/>
-        <image name="5" width="250" height="337"/>
-        <image name="6" width="250" height="337"/>
+        <image name="5" width="251" height="337"/>
+        <image name="6" width="251" height="337"/>
         <image name="7" width="251" height="337"/>
         <image name="8" width="251" height="337"/>
         <image name="9" width="251" height="337"/>
-        <image name="empty" width="250" height="337"/>
+        <image name="empty" width="251" height="337"/>
     </resources>
 </document>

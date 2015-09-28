@@ -11,7 +11,26 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, CadenceDelegate {
 
+    @IBOutlet var rpmDigits: [UIImageView]!
+    @IBOutlet var countDigits: [UIImageView]!
+    @IBOutlet var averageDigits: [UIImageView]!
+    
     let locationManager = CLLocationManager()
+    
+    let digitImages: [UIImage]
+    let emptyImage: UIImage
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        digitImages = (0...9).map({ i in return UIImage(named: "\(i)")! })
+        emptyImage = UIImage(named: "empty")!
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        digitImages = (0...9).map({ i in return UIImage(named: "\(i)")! })
+        emptyImage = UIImage(named: "empty")!
+        super.init(coder: aDecoder)!
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +38,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CadenceDelega
         locationManager.headingFilter = kCLHeadingFilterNone
         locationManager.delegate = self
         locationManager.startUpdatingHeading()
+
+        
+        setRPM(0)
+        countDigits.forEach { $0.image = emptyImage }
+        averageDigits.forEach { $0.image = emptyImage }
+    }
+    
+    func setRPM(rpm: Double) {
+        rpmDigits.forEach { $0.image = emptyImage }
+        if rpm >= 100 {
+            rpmDigits[0].image = digitImages[Int((rpm / 100) % 10)]
+        }
+        if rpm >= 10 {
+            rpmDigits[1].image = digitImages[Int((rpm / 10) % 10)]
+        }
+        rpmDigits[2].image = digitImages[Int((rpm / 1) % 10)]
+        rpmDigits[3].image = digitImages[Int((rpm / 0.1) % 10)]
     }
     
     deinit {
