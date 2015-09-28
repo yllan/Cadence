@@ -24,6 +24,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CadenceDelega
     @IBOutlet var rpmDigits: [UIImageView]!
     @IBOutlet var countDigits: [UIImageView]!
     @IBOutlet var averageDigits: [UIImageView]!
+    @IBOutlet weak var historyView: HistoryView!
     
     let locationManager = CLLocationManager()
     var cadence: Cadence! = Cadence()
@@ -32,7 +33,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CadenceDelega
     let emptyImage: UIImage
     
     var begin = false
-    var calibrate = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         digitImages = (0...9).map({ i in return UIImage(named: "\(i)")! })
@@ -94,16 +94,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CadenceDelega
         if begin {
             UIApplication.sharedApplication().idleTimerDisabled = true
             cadence.clear()
-            cadence.beginCalibrate()
-            calibrate = true
+            cadence.beginMeasure()
             locationManager.startUpdatingHeading()
-            let alert = UIAlertController(title: NSLocalizedString("Calibrating…", comment: ""), message: NSLocalizedString("Calibrating your bike. Please do a full circle pedaling then press OK.", comment: ""), preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: UIAlertActionStyle.Default, handler: { (action) -> Void in
-                self.calibrate = false
-                self.cadence.beginMeasure()
-            }))
-            
-            self.presentViewController(alert, animated: true) {}
         } else {
             UIApplication.sharedApplication().idleTimerDisabled = false
             locationManager.stopUpdatingHeading()
@@ -122,11 +114,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CadenceDelega
     
     func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         let magnitude = sqrt(newHeading.x * newHeading.x + newHeading.y * newHeading.y + newHeading.z * newHeading.z)
-        if calibrate {
-            cadence.calibrate(magnitude)
-        } else {
-            cadence.updateMagnitue(magnitude)
-        }
+        cadence.updateMagnitue(magnitude)
+        historyView.cadence = cadence
+        historyView.setNeedsDisplay()
     }
     
     func tellServer() {

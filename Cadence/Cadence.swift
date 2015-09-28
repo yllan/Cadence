@@ -23,35 +23,30 @@ class Cadence {
     var previousDate: NSDate? = nil
     var previousTopDate: NSDate? = nil
     var previousMagnitude = 0.0
+
+    var history = [Double](count: 300, repeatedValue: 0.0)
+    var sampleCount = 0
     
     var delegate: CadenceDelegate? = nil
     var timer: NSTimer? = nil
     var reachedTop = false
     
     func clear() {
+        sampleCount = 0
         totalCount = 0
         beginDate = nil
         previousDate = nil
         previousTopDate = nil
         previousMagnitude = 0.0
         reachedTop = false
-    }
-    
-    /* calibrate */
-    func beginCalibrate() {
-        minMagnitude = Double.infinity
-        maxMagnitude = -Double.infinity
-    }
-    
-    func calibrate(magnitude: Double) {
-        minMagnitude = min(minMagnitude, magnitude)
-        maxMagnitude = max(maxMagnitude, magnitude)
-//        print("\(minMagnitude) - \(maxMagnitude)")
+        minMagnitude = 0
+        maxMagnitude = 10000
     }
  
     /* measure */
     func beginMeasure() {
-        totalCount = 0
+        clear()
+
         beginDate = NSDate()
         previousMagnitude = 0
         previousTopDate = nil
@@ -63,30 +58,18 @@ class Cadence {
     }
     
     func updateMagnitue(magnitude: Double) {
+        history[sampleCount++ % history.count] = magnitude
+        if sampleCount < history.count { // collecting enough data
+            return
+        }
+
+        minMagnitude = history.prefix(sampleCount).minElement()!
+        maxMagnitude = history.prefix(sampleCount).maxElement()!
+        
         let now = NSDate()
         
-        // prediction, use interpolation
-        // FIXME: this algorithm didn't work at all!
-        if let previousDate = previousDate {
-            let minM = min(previousMagnitude, magnitude, minMagnitude)
-            let maxM = max(previousMagnitude, magnitude, maxMagnitude)
-            let threshold = (minM + maxM) / 2
-            
-            let thetaA = asin((previousMagnitude - threshold) / threshold)
-            let thetaB = asin((magnitude - threshold) / threshold)
-            
-            // delta theta over the whole circle
-            let deltaThetaOver2Pi = abs(thetaA - thetaB) / (M_PI * 2)
-            
-            let predictDuration = now.timeIntervalSinceDate(previousDate) / deltaThetaOver2Pi
-
-//            if let delegate = delegate {
-//                delegate.updateCadenceRPM(rpm(predictDuration), cadenceCount: totalCount, exact: false)
-//            }
-        }
-        
         func insideNeighborZone(m: Double) -> Bool {
-            return m >= (maxMagnitude - minMagnitude) / 2;
+            return m >= (maxMagnitude + minMagnitude) / 2;
         }
         
         let prevInsideZone = insideNeighborZone(previousMagnitude)

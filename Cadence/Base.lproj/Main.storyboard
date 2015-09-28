@@ -56,7 +56,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35j-KJ-3ip">
-                                <rect key="frame" x="20" y="463.5" width="560" height="2"/>
+                                <rect key="frame" x="20" y="463" width="560" height="2"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="4uQ-Mv-j8J"/>
@@ -144,7 +144,7 @@
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar0-aN-0Up">
-                                <rect key="frame" x="20" y="473.5" width="560" height="70.5"/>
+                                <rect key="frame" x="20" y="498" width="560" height="46"/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Start Pedaling!"/>
@@ -152,6 +152,10 @@
                                     <action selector="togglePedal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQt-dE-ZV8"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXf-fO-b4O" customClass="HistoryView" customModule="Cadence" customModuleProvider="target">
+                                <rect key="frame" x="20" y="465" width="560" height="33"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.41176470588235292" green="0.62745098039215685" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -170,8 +174,10 @@
                             <constraint firstItem="zRC-7e-4Ip" firstAttribute="leading" secondItem="Hga-mM-iED" secondAttribute="trailing" id="6Mw-pn-CVp"/>
                             <constraint firstItem="35j-KJ-3ip" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6e0-QZ-zPY"/>
                             <constraint firstItem="dZ5-co-Qc0" firstAttribute="top" secondItem="FvU-4a-EHR" secondAttribute="bottom" constant="18" id="8DI-ma-jZZ"/>
+                            <constraint firstItem="yXf-fO-b4O" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8Ua-eC-JdD"/>
                             <constraint firstItem="hso-M7-rLw" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="9cU-No-fBL"/>
                             <constraint firstItem="hxN-tD-qqU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="F7S-Bb-SkA"/>
+                            <constraint firstItem="ar0-aN-0Up" firstAttribute="top" secondItem="yXf-fO-b4O" secondAttribute="bottom" id="Frw-ha-9fv"/>
                             <constraint firstItem="Hga-mM-iED" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fum-W1-66J"/>
                             <constraint firstItem="WsD-Dp-vGe" firstAttribute="centerY" secondItem="dZ5-co-Qc0" secondAttribute="centerY" id="GVw-YV-i6K"/>
                             <constraint firstItem="ar0-aN-0Up" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ieq-JP-WNu"/>
@@ -198,6 +204,8 @@
                             <constraint firstItem="zRC-7e-4Ip" firstAttribute="centerY" secondItem="Hga-mM-iED" secondAttribute="centerY" id="XxO-j8-dom"/>
                             <constraint firstItem="Pge-Bk-BDZ" firstAttribute="centerY" secondItem="rrs-ol-hIY" secondAttribute="centerY" id="aEP-3f-J8s"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ar0-aN-0Up" secondAttribute="bottom" constant="56" id="aO9-f8-WBz"/>
+                            <constraint firstItem="yXf-fO-b4O" firstAttribute="top" secondItem="35j-KJ-3ip" secondAttribute="bottom" id="aiE-nc-pIV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yXf-fO-b4O" secondAttribute="trailing" id="dV7-uI-5Hx"/>
                             <constraint firstItem="LKe-bt-QfZ" firstAttribute="trailing" secondItem="1EQ-lv-SHx" secondAttribute="leading" id="f1R-me-SAJ"/>
                             <constraint firstItem="ar0-aN-0Up" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hIR-zf-Ofu"/>
                             <constraint firstItem="Pge-Bk-BDZ" firstAttribute="centerY" secondItem="Hga-mM-iED" secondAttribute="centerY" id="i5N-ta-kW9"/>
@@ -216,10 +224,12 @@
                             <mask key="constraints">
                                 <exclude reference="pks-et-aHr"/>
                                 <exclude reference="UfP-i1-yUh"/>
+                                <exclude reference="Kny-u8-1nS"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="historyView" destination="yXf-fO-b4O" id="l9U-zW-Kok"/>
                         <outletCollection property="rpmDigits" destination="Hga-mM-iED" collectionClass="NSMutableArray" id="IlY-JR-hfY"/>
                         <outletCollection property="rpmDigits" destination="zRC-7e-4Ip" collectionClass="NSMutableArray" id="Qbf-p1-X0I"/>
                         <outletCollection property="rpmDigits" destination="rrs-ol-hIY" collectionClass="NSMutableArray" id="oRu-oA-f2z"/>
