@@ -10,6 +10,7 @@ import Foundation
 
 protocol CadenceDelegate {
     func updateCadenceRPM(rpm: Double, cadenceCount: Int, exact: Bool)
+    func updateAverageRPM(average: Double)
 }
 
 class Cadence {
@@ -24,8 +25,17 @@ class Cadence {
     var previousMagnitude = 0.0
     
     var delegate: CadenceDelegate? = nil
-    
+    var timer: NSTimer? = nil
     var reachedTop = false
+    
+    func clear() {
+        totalCount = 0
+        beginDate = nil
+        previousDate = nil
+        previousTopDate = nil
+        previousMagnitude = 0.0
+        reachedTop = false
+    }
     
     /* calibrate */
     func beginCalibrate() {
@@ -36,6 +46,7 @@ class Cadence {
     func calibrate(magnitude: Double) {
         minMagnitude = min(minMagnitude, magnitude)
         maxMagnitude = max(maxMagnitude, magnitude)
+//        print("\(minMagnitude) - \(maxMagnitude)")
     }
  
     /* measure */
@@ -44,12 +55,18 @@ class Cadence {
         beginDate = NSDate()
         previousMagnitude = 0
         previousTopDate = nil
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "tick", userInfo: nil, repeats: true)
+    }
+    
+    func stopMeasure() {
+        timer?.invalidate()
     }
     
     func updateMagnitue(magnitude: Double) {
         let now = NSDate()
         
         // prediction, use interpolation
+        // FIXME: this algorithm didn't work at all!
         if let previousDate = previousDate {
             let minM = min(previousMagnitude, magnitude, minMagnitude)
             let maxM = max(previousMagnitude, magnitude, maxMagnitude)
@@ -62,9 +79,10 @@ class Cadence {
             let deltaThetaOver2Pi = abs(thetaA - thetaB) / (M_PI * 2)
             
             let predictDuration = now.timeIntervalSinceDate(previousDate) / deltaThetaOver2Pi
-            if let delegate = delegate {
-                delegate.updateCadenceRPM(rpm(predictDuration), cadenceCount: totalCount, exact: false)
-            }
+
+//            if let delegate = delegate {
+//                delegate.updateCadenceRPM(rpm(predictDuration), cadenceCount: totalCount, exact: false)
+//            }
         }
         
         func insideNeighborZone(m: Double) -> Bool {
@@ -87,15 +105,21 @@ class Cadence {
         previousMagnitude = magnitude
     }
     
+    @objc func tick() {
+        if let beginDate = beginDate {
+            if totalCount > 0 {
+                delegate?.updateAverageRPM(rpm(abs(beginDate.timeIntervalSinceNow) / Double(totalCount)))
+            }
+        }
+    }
+    
     func rpm(duration: Double) -> Double {
         return 60.0 / duration
     }
     
     func cadenceOnce(now: NSDate) {
         if let previousTopDate = previousTopDate {
-            if let delegate = delegate {
-                delegate.updateCadenceRPM(rpm(now.timeIntervalSinceDate(previousTopDate)), cadenceCount: totalCount + 1, exact: true)
-            }
+            delegate?.updateCadenceRPM(rpm(now.timeIntervalSinceDate(previousTopDate)), cadenceCount: totalCount + 1, exact: true)
         }
         
         previousTopDate = now
