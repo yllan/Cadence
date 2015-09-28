@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		857A06D51BB90BA400A08E52 /* Cadence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857A06D41BB90BA400A08E52 /* Cadence.swift */; settings = {ASSET_TAGS = (); }; };
 		85AB970F1BAD8E570082D09C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB970E1BAD8E570082D09C /* AppDelegate.swift */; };
 		85AB97111BAD8E570082D09C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB97101BAD8E570082D09C /* ViewController.swift */; };
 		85AB97141BAD8E570082D09C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AB97121BAD8E570082D09C /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		857A06D41BB90BA400A08E52 /* Cadence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cadence.swift; sourceTree = "<group>"; };
 		85AB970B1BAD8E570082D09C /* Cadence.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cadence.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85AB970E1BAD8E570082D09C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85AB97101BAD8E570082D09C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				85AB970E1BAD8E570082D09C /* AppDelegate.swift */,
 				85AB97101BAD8E570082D09C /* ViewController.swift */,
+				857A06D41BB90BA400A08E52 /* Cadence.swift */,
 				85AB97121BAD8E570082D09C /* Main.storyboard */,
 				85AB97151BAD8E570082D09C /* Assets.xcassets */,
 				85AB97171BAD8E570082D09C /* LaunchScreen.storyboard */,
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				857A06D51BB90BA400A08E52 /* Cadence.swift in Sources */,
 				85AB97111BAD8E570082D09C /* ViewController.swift in Sources */,
 				85AB970F1BAD8E570082D09C /* AppDelegate.swift in Sources */,
 			);
@@ -483,6 +487,7 @@
 				85AB97351BAD8E580082D09C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85AB97361BAD8E580082D09C /* Build configuration list for PBXNativeTarget "CadenceTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +496,7 @@
 				85AB97381BAD8E580082D09C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		85AB97391BAD8E580082D09C /* Build configuration list for PBXNativeTarget "CadenceUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +505,7 @@
 				85AB973B1BAD8E580082D09C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
