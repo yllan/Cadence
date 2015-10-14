@@ -417,6 +417,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.yllan.Cadence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -430,6 +431,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.yllan.Cadence;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0594676f-95e3-4f93-a7d1-97be65403d05";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
