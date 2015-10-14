@@ -53,16 +53,16 @@
                                     <constraint firstAttribute="width" secondItem="Hga-mM-iED" secondAttribute="height" multiplier="250:337" id="iGn-3R-380"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxN-tD-qqU">
-                                <rect key="frame" x="20" y="282" width="560" height="2"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxN-tD-qqU">
+                                <rect key="frame" x="20" y="283" width="560" height="2"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="1ti-XO-230"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35j-KJ-3ip">
-                                <rect key="frame" x="20" y="463" width="560" height="2"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35j-KJ-3ip">
+                                <rect key="frame" x="20" y="466" width="560" height="2"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -75,8 +75,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="th9-le-PGV">
-                                <rect key="frame" x="426" y="264" width="10" height="10"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="th9-le-PGV">
+                                <rect key="frame" x="426" y="265" width="10" height="10"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -84,57 +84,57 @@
                                     <constraint firstAttribute="width" constant="10" id="aST-fi-NJW"/>
                                 </constraints>
                             </view>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="dZ5-co-Qc0">
-                                <rect key="frame" x="20" y="345" width="76" height="103"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="dZ5-co-Qc0">
+                                <rect key="frame" x="20" y="346" width="76" height="103"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="dZ5-co-Qc0" secondAttribute="height" multiplier="25:34" id="U05-ra-FGI"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="eoh-Rw-5d9">
-                                <rect key="frame" x="96" y="345" width="76" height="103"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="2" translatesAutoresizingMaskIntoConstraints="NO" id="eoh-Rw-5d9">
+                                <rect key="frame" x="96" y="346" width="76" height="103"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eoh-Rw-5d9" secondAttribute="height" multiplier="25:34" id="gpf-2o-R86"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="LKe-bt-QfZ">
-                                <rect key="frame" x="172" y="344" width="76" height="104"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="3" translatesAutoresizingMaskIntoConstraints="NO" id="LKe-bt-QfZ">
+                                <rect key="frame" x="172" y="345" width="76" height="104"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LKe-bt-QfZ" secondAttribute="height" multiplier="25:34" id="OVz-2e-Lvh"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="1EQ-lv-SHx">
-                                <rect key="frame" x="248" y="344" width="76" height="104"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="1EQ-lv-SHx">
+                                <rect key="frame" x="248" y="346" width="76" height="104"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1EQ-lv-SHx" secondAttribute="height" multiplier="25:34" id="1nT-I0-pnI"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="WsD-Dp-vGe">
-                                <rect key="frame" x="351" y="344" width="77" height="104"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="5" translatesAutoresizingMaskIntoConstraints="NO" id="WsD-Dp-vGe">
+                                <rect key="frame" x="352" y="346" width="76" height="103"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WsD-Dp-vGe" secondAttribute="height" multiplier="25:34" id="PV8-3c-Doz"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-a0-I9z">
-                                <rect key="frame" x="428" y="345" width="76" height="103"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-a0-I9z">
+                                <rect key="frame" x="428" y="346" width="76" height="103"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5ZV-a0-I9z" secondAttribute="height" multiplier="25:34" id="F8D-hy-6xz"/>
                                 </constraints>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" image="7" translatesAutoresizingMaskIntoConstraints="NO" id="phN-ct-97Q">
-                                <rect key="frame" x="503" y="344" width="77" height="104"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="7" translatesAutoresizingMaskIntoConstraints="NO" id="phN-ct-97Q">
+                                <rect key="frame" x="504" y="345" width="76" height="104"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="phN-ct-97Q" secondAttribute="height" multiplier="25:34" id="fhH-sC-bxz"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-3h-c96">
-                                <rect key="frame" x="339" y="284" width="2" height="180"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-3h-c96">
+                                <rect key="frame" x="340" y="285" width="2" height="181"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -147,15 +147,15 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvU-4a-EHR">
-                                <rect key="frame" x="248" y="298" width="75" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FvU-4a-EHR">
+                                <rect key="frame" x="249" y="299" width="75" height="29"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-C1-xhZ">
-                                <rect key="frame" x="478" y="296" width="102" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iec-C1-xhZ">
+                                <rect key="frame" x="478" y="297" width="102" height="29"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="24"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -171,8 +171,8 @@
                                     <action selector="togglePedal:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQt-dE-ZV8"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yXf-fO-b4O" customClass="HistoryView" customModule="Cadence" customModuleProvider="target">
-                                <rect key="frame" x="20" y="465" width="560" height="33"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yXf-fO-b4O" customClass="HistoryView" customModule="Cadence" customModuleProvider="target">
+                                <rect key="frame" x="20" y="468" width="560" height="30"/>
                                 <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                             </view>
