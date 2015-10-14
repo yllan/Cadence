@@ -16,6 +16,7 @@
 		85AB97241BAD8E570082D09C /* CadenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB97231BAD8E570082D09C /* CadenceTests.swift */; };
 		85AB972F1BAD8E580082D09C /* CadenceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85AB972E1BAD8E580082D09C /* CadenceUITests.swift */; };
 		85BA48341BB9A1AF00DE0691 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85BA48331BB9A1AF00DE0691 /* HistoryView.swift */; settings = {ASSET_TAGS = (); }; };
+		85D769EA1BCD0C1C009157AE /* ManualController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D769E91BCD0C1C009157AE /* ManualController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		85AB972E1BAD8E580082D09C /* CadenceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CadenceUITests.swift; sourceTree = "<group>"; };
 		85AB97301BAD8E580082D09C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85BA48331BB9A1AF00DE0691 /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
+		85D769E91BCD0C1C009157AE /* ManualController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManualController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				85AB97101BAD8E570082D09C /* ViewController.swift */,
 				857A06D41BB90BA400A08E52 /* Cadence.swift */,
 				85BA48331BB9A1AF00DE0691 /* HistoryView.swift */,
+				85D769E91BCD0C1C009157AE /* ManualController.swift */,
 				85AB97121BAD8E570082D09C /* Main.storyboard */,
 				85AB97151BAD8E570082D09C /* Assets.xcassets */,
 				85AB97171BAD8E570082D09C /* LaunchScreen.storyboard */,
@@ -263,6 +266,7 @@
 			files = (
 				857A06D51BB90BA400A08E52 /* Cadence.swift in Sources */,
 				85BA48341BB9A1AF00DE0691 /* HistoryView.swift in Sources */,
+				85D769EA1BCD0C1C009157AE /* ManualController.swift in Sources */,
 				85AB97111BAD8E570082D09C /* ViewController.swift in Sources */,
 				85AB970F1BAD8E570082D09C /* AppDelegate.swift in Sources */,
 			);

@@ -119,6 +119,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, CadenceDelega
         historyView.setNeedsDisplay()
     }
     
+    @IBAction func showManual(sender: AnyObject) {
+        let manualController = ManualController()
+        let v = self.view.snapshotViewAfterScreenUpdates(false)
+        manualController.view.insertSubview(v, belowSubview: manualController.scrollView)
+        self.presentViewController(manualController, animated: true) {
+            
+        }
+    }
+    
     func tellServer() {
 //        let url = NSURL(string: "http://192.168.1.104:9999/")
 //        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
